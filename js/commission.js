@@ -17,6 +17,12 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
+const commissionPlayers = new Map();
+
+let commissionPlayerCards = [];
+
+
+
 /* ========================================
    讀取 Google Sheet
 ======================================== */
@@ -136,14 +142,22 @@ function createCommissionCarousel(
         dotsContainer.innerHTML = "";
     }
 
-    const cards = examples.map(example => {
-        const card =
-            createCommissionExampleCard(example);
+    const cards = examples.map(
+        (example, index) => {
+            const card =
+                createCommissionExampleCard(
+                    example,
+                    index
+                );
 
-        track.appendChild(card);
+            track.appendChild(card);
 
-        return card;
-    });
+            return card;
+        }
+    );
+    
+    commissionPlayerCards = cards;
+    prepareCommissionPlayers(cards);
 
     const dots = examples.map((example, index) => {
         if (!dotsContainer) {
@@ -251,17 +265,103 @@ function createCommissionCarousel(
                 index === currentIndex
             );
         });
+
+        pauseInactiveCommissionVideos();
     }
 
     updateCarousel();
 }
 
+function prepareCommissionPlayers(cards) {
+    if (
+        window.YT &&
+        typeof window.YT.Player === "function"
+    ) {
+        initCommissionPlayers(cards);
+        return;
+    }
+
+    window.addEventListener(
+        "youtube-iframe-api-ready",
+        () => {
+            initCommissionPlayers(cards);
+        },
+        {
+            once: true
+        }
+    );
+}
+
+
+function initCommissionPlayers(cards) {
+    cards.forEach(card => {
+        const iframe =
+            card.querySelector("iframe");
+
+        if (!iframe || !iframe.id) {
+            return;
+        }
+
+        if (commissionPlayers.has(card)) {
+            return;
+        }
+
+        const player =
+            new YT.Player(iframe.id, {
+                events: {
+                    onReady: event => {
+                        commissionPlayers.set(
+                            card,
+                            event.target
+                        );
+                    }
+                }
+            });
+
+        /*
+         * 先存起來，避免 API ready 前
+         * 重複建立同一個播放器。
+         */
+        commissionPlayers.set(
+            card,
+            player
+        );
+    });
+}
+
+function pauseInactiveCommissionVideos() {
+    commissionPlayers.forEach(
+        (player, card) => {
+            if (
+                card.classList.contains(
+                    "is_active"
+                )
+            ) {
+                return;
+            }
+
+            if (
+                typeof player.pauseVideo ===
+                "function"
+            ) {
+                try {
+                    player.pauseVideo();
+                } catch (error) {
+                    console.warn(
+                        "委託範例影片暫停失敗：",
+                        error
+                    );
+                }
+            }
+        }
+    );
+}
 
 /* ========================================
    建立作品卡片
 ======================================== */
 
-function createCommissionExampleCard(example) {
+function createCommissionExampleCard(example, index) {
     const article =
         document.createElement("article");
 
@@ -275,8 +375,17 @@ function createCommissionExampleCard(example) {
     const iframe =
         document.createElement("iframe");
 
+    iframe.id =
+        `commission_player_${index}`;
+
+    const origin =
+        encodeURIComponent(
+            window.location.origin
+        );
+
     iframe.src =
-        `https://www.youtube.com/embed/${example.videoId}`;
+        `https://www.youtube.com/embed/${example.videoId}` +
+        `?enablejsapi=1&origin=${origin}`;
 
     iframe.title = example.title;
     iframe.loading = "lazy";

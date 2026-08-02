@@ -284,6 +284,13 @@ function initFeaturedCarousel() {
         return;
     }
 
+    if (
+        window.YT &&
+        typeof window.YT.Player === "function"
+    ) {
+        initFeaturedPlayers();
+    }
+
     let currentIndex = 0;
 
 
@@ -333,6 +340,8 @@ function initFeaturedCarousel() {
                     "is_next"
                 );
             }
+
+            
         });
 
         const dots = [
@@ -345,12 +354,14 @@ function initFeaturedCarousel() {
                 index === currentIndex
             );
         });
-
+        
         previousButton.disabled =
             total <= 1;
 
         nextButton.disabled =
             total <= 1;
+
+        pauseInactiveFeaturedVideos();
     }
 
 
@@ -419,6 +430,73 @@ function initFeaturedCarousel() {
     updateCarousel();
 }
 
+
+const featuredPlayers = new Map();
+
+let youtubeIframeApiReady = false;
+
+
+/*
+ * YouTube IFrame API 載入完成後會自動呼叫這個函式。
+ * 函式名稱必須保持不變。
+ */
+window.youtubeIframeApiReady = false;
+
+window.onYouTubeIframeAPIReady = function () {
+    window.youtubeIframeApiReady = true;
+
+    /* 首頁播放器 */
+    initFeaturedPlayers();
+
+    /*
+     * 通知其他頁面：
+     * YouTube API 已經可以使用
+     */
+    window.dispatchEvent(
+        new Event("youtube-iframe-api-ready")
+    );
+};
+
+
+function initFeaturedPlayers() {
+    const cards =
+        document.querySelectorAll(".featured_card");
+
+    cards.forEach(card => {
+        const iframe =
+            card.querySelector("iframe");
+
+        if (!iframe || !iframe.id) {
+            return;
+        }
+
+        if (featuredPlayers.has(card)) {
+            return;
+        }
+
+        const player = new YT.Player(iframe.id, {
+            events: {
+                onReady: event => {
+                    featuredPlayers.set(
+                        card,
+                        event.target
+                    );
+                }
+            }
+        });
+    });
+}
+
+function pauseInactiveFeaturedVideos() {
+    featuredPlayers.forEach((player, card) => {
+        if (
+            !card.classList.contains("is_active") &&
+            typeof player.pauseVideo === "function"
+        ) {
+            player.pauseVideo();
+        }
+    });
+}
 
 /* ========================================
    最新作品：Google Sheet
