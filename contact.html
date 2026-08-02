@@ -121,21 +121,22 @@
             >
 
             <script type="text/javascript" id="hcb">
-                if (!window.hcb_user) {
-                    hcb_user = {};
-                }
+                window.hcb_user = {
+                    PAGE: "visser-contact-comment-box"
+                };
 
                 (function () {
-                    const script = document.createElement("script");
+                    const script =
+                        document.createElement("script");
 
                     const page =
-                        hcb_user.PAGE ||
-                        String(window.location).replace(/'/g, "%27");
+                        window.hcb_user.PAGE;
 
                     const host =
                         "https://www.htmlcommentbox.com";
 
-                    script.type = "text/javascript";
+                    script.type =
+                        "text/javascript";
 
                     script.src =
                         host +
