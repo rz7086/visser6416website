@@ -1,0 +1,716 @@
+/* ========================================
+   ABOUT PAGE
+======================================== */
+
+.about_page {
+    overflow-x: hidden;
+}
+
+.about_section {
+    padding-block: var(--space-2xl);
+}
+
+
+/* ========================================
+   共用區塊標題
+======================================== */
+
+.section_heading {
+    width: min(720px, 100%);
+    margin: 0 auto var(--space-xl);
+    text-align: center;
+}
+
+.section_heading h2 {
+    margin: 0.25em 0 0.4em;
+}
+
+.section_heading p:last-child {
+    margin-inline: auto;
+    color: var(--color-text-muted);
+    line-height: 1.8;
+}
+
+
+/* ========================================
+   HERO
+======================================== */
+
+.about_hero {
+    padding-block:
+        calc(var(--space-2xl) + 32px)
+        var(--space-2xl);
+}
+
+.about_hero_inner {
+    display: grid;
+    grid-template-columns:
+        minmax(280px, 0.9fr)
+        minmax(320px, 1.1fr);
+    align-items: center;
+    gap: clamp(40px, 7vw, 100px);
+}
+
+.about_hero_image {
+    position: relative;
+    overflow: hidden;
+
+    aspect-ratio: 1 / 1;
+    min-height: 0;
+
+    border: 1px solid var(--color-border);
+    background: var(--color-surface);
+    
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.about_hero_image::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(
+            180deg,
+            transparent 55%,
+            rgba(0, 0, 0, 0.48)
+        );
+    pointer-events: none;
+}
+
+.about_hero_image img {
+    width: 100%;
+    height: 100%;
+    min-height: inherit;
+    display: block;
+    object-fit: contain;
+}
+
+.about_hero_content {
+    max-width: 680px;
+}
+
+.about_hero_content h1 {
+    margin: 0.18em 0;
+    font-size: clamp(3rem, 7vw, 6.5rem);
+    line-height: 0.95;
+    letter-spacing: -0.055em;
+}
+
+.about_hero_lead {
+    margin: 1.2em 0 0;
+    font-size: clamp(1.35rem, 2.6vw, 2.2rem);
+    font-weight: 700;
+    line-height: 1.45;
+}
+
+.about_hero_text {
+    max-width: 620px;
+    margin-top: 1.5rem;
+    color: var(--color-text-muted);
+    font-size: 1.05rem;
+    line-height: 1.9;
+}
+
+.about_hero_actions,
+.about_cta_actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: var(--space-lg);
+    justify-items:center;
+    justify-content: center;
+}
+
+
+/* ========================================
+   BUTTON
+======================================== */
+
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+
+    min-height: 46px;
+    padding: 0 20px;
+
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-pill);
+
+    color: var(--color-text);
+    text-decoration: none;
+
+    transition:
+        transform var(--transition-fast),
+        border-color var(--transition-fast),
+        background-color var(--transition-fast),
+        color var(--transition-fast);
+}
+
+.button:hover {
+    transform: translateY(-2px);
+}
+
+.button_primary {
+    border-color: var(--color-primary);
+    background: var(--color-primary);
+    color: #9e82b3;
+}
+
+.button_primary:hover {
+    background: #ffffff;
+    border-color: #ffffff;
+}
+
+.button_secondary {
+    background: transparent;
+    border-color: var(--color-text);
+}
+
+.button_secondary:hover {
+    background-color: #9e82b3;
+    
+    border-color: #9e82b3;
+}
+
+
+/* ========================================
+   WHAT I CREATE
+======================================== */
+
+.about_create_grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--space-lg);
+}
+
+.about_create_card {
+    min-height: 300px;
+    padding: clamp(24px, 3vw, 36px);
+
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+
+    background: var(--color-surface);
+    text-align: center;
+
+    transition:
+        transform var(--transition-fast),
+        border-color var(--transition-fast),
+        box-shadow var(--transition-fast);
+}
+
+.about_create_card:hover {
+    transform: translateY(-5px);
+    border-color: var(--color-primary);
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.2);
+}
+
+.about_create_icon {
+    display: grid;
+    width: 50px;
+    height: 50px;
+    margin-inline: auto;
+    place-items: center;
+
+    border-radius: 50%;
+    background: rgba(172, 135, 201, 0.14);
+
+    color: var(--color-primary);
+    font-size: 1.2rem;
+}
+
+.about_create_card h3 {
+    margin: 1.4em 0 0.7em;
+    font-size: 1.35rem;
+}
+
+.about_create_card p {
+    margin: 0;
+    color: var(--color-text-muted);
+    line-height: 1.85;
+}
+
+
+/* ========================================
+   PHILOSOPHY
+======================================== */
+
+.about_philosophy {
+    padding-block: clamp(80px, 10vw, 150px);
+
+    border-block: 1px solid var(--color-border);
+
+    background:
+        radial-gradient(
+            circle at 20% 30%,
+            rgba(172, 135, 201, 0.1),
+            transparent 35%
+        ),
+        var(--color-surface);
+}
+
+.about_philosophy_inner {
+    display: grid;
+    grid-template-columns:
+        minmax(320px, 1.05fr)
+        minmax(280px, 0.95fr);
+    align-items: center;
+    gap: clamp(40px, 8vw, 110px);
+}
+
+.about_philosophy_content {
+    text-align: center;
+}
+
+.about_philosophy_content blockquote {
+    margin: 0.45em auto;
+    max-width: 760px;
+
+    font-size: clamp(2rem, 4.5vw, 4.4rem);
+    font-weight: 700;
+    line-height: 1.3;
+    letter-spacing: -0.04em;
+}
+
+.about_philosophy_content > p:last-child {
+    max-width: 650px;
+    margin: 2rem auto 0;
+
+    color: var(--color-text-muted);
+    line-height: 1.95;
+}
+
+.about_philosophy_image {
+    overflow: hidden;
+    aspect-ratio: 4 / 6;
+
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+}
+
+.about_philosophy_image img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center bottom;
+}
+
+
+/* ========================================
+   TIMELINE
+======================================== */
+
+.about_timeline .section_heading {
+    text-align: center;
+}
+
+.timeline {
+    position: relative;
+    display: grid;
+    gap: 70px;
+
+    width: min(1000px, 100%);
+    margin-inline: auto;
+    padding-block: 20px;
+}
+
+/* 中央垂直線 */
+.timeline::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+
+    width: 1px;
+    background: var(--color-border);
+
+    transform: translateX(-50%);
+}
+
+/* 每個時間點 */
+.timeline_item {
+    position: relative;
+    width: calc(50% - 48px);
+    padding: 26px 30px;
+
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+
+    background: var(--color-surface);
+}
+
+/* 奇數項放左邊 */
+.timeline_item:nth-child(odd) {
+    justify-self: start;
+    text-align: right;
+}
+
+/* 偶數項放右邊 */
+.timeline_item:nth-child(even) {
+    justify-self: end;
+    text-align: left;
+}
+
+/* 圓點 */
+.timeline_marker {
+    position: absolute;
+    top: 32px;
+
+    width: 15px;
+    height: 15px;
+
+    border: 3px solid var(--color-background);
+    border-radius: 50%;
+
+    background: var(--color-primary);
+    box-shadow: 0 0 0 1px var(--color-primary);
+}
+
+/* 左側項目的圓點 */
+.timeline_item:nth-child(odd) .timeline_marker {
+    right: -56px;
+}
+
+/* 右側項目的圓點 */
+.timeline_item:nth-child(even) .timeline_marker {
+    left: -56px;
+}
+
+.timeline_year {
+    margin: 0 0 0.4em;
+
+    color: var(--color-primary);
+    font-family: monospace;
+    font-size: 0.9rem;
+    letter-spacing: 0.08em;
+}
+
+.timeline_item h3 {
+    margin: 0;
+    font-size: 1.35rem;
+}
+
+.timeline_item > p:last-child {
+    margin: 0.7em 0 0;
+    color: var(--color-text-muted);
+    line-height: 1.8;
+}
+
+
+/* ========================================
+   NUMBERS
+======================================== */
+
+.about_numbers {
+    padding-block: clamp(70px, 9vw, 120px);
+
+    border-block: 1px solid var(--color-border);
+    background: var(--color-surface);
+}
+
+.about_numbers_grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.about_number_item {
+    display: flex;
+    min-height: 200px;
+    padding: 30px;
+
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    text-align: center;
+}
+
+.about_number_item + .about_number_item {
+    border-left: 1px solid var(--color-border);
+}
+
+.about_number {
+    display: block;
+
+    font-size: clamp(3.5rem, 8vw, 7rem);
+    line-height: 1;
+    letter-spacing: -0.06em;
+}
+
+.about_number_item span {
+    margin-top: 14px;
+    color: var(--color-text-muted);
+}
+
+.about_number_symbol {
+    color: var(--color-secondary, #8fd694);
+}
+
+
+/* ========================================
+   GALLERY
+======================================== */
+
+
+.about_gallery_grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 240px;
+    gap: 16px;
+}
+
+.about_gallery_item {
+    overflow: hidden;
+    margin: 0;
+
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+
+    background: var(--color-surface);
+}
+
+.about_gallery_item_large {
+    grid-row: span 2;
+}
+
+.about_gallery_item_wide {
+    grid-column: span 2;
+}
+
+.about_gallery_item img {
+    width: 100%;
+    height: 100%;
+    display: block;
+
+    object-fit: cover;
+
+    transition:
+        transform 0.5s ease;
+}
+
+.about_gallery_item:hover img {
+    transform: scale(1.04);
+}
+
+
+/* ========================================
+   CTA
+======================================== */
+
+.about_cta {
+    padding-block: clamp(90px, 12vw, 170px);
+}
+
+.about_cta_inner {
+    padding: clamp(38px, 7vw, 90px);
+
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+
+    background:
+        radial-gradient(
+            circle at 85% 20%,
+            rgba(115, 182, 143, 0.14),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 10% 90%,
+            rgba(172, 135, 201, 0.16),
+            transparent 38%
+        ),
+        var(--color-surface);
+
+    text-align: center;
+}
+
+.about_cta_inner h2 {
+    margin: 0.3em 0;
+
+    font-size: clamp(2.2rem, 5vw, 4.8rem);
+    letter-spacing: -0.045em;
+}
+
+.about_cta_inner > p:not(.section_label) {
+    max-width: 620px;
+    margin-inline: auto;
+
+    color: var(--color-text-muted);
+    line-height: 1.8;
+}
+
+.about_cta_actions {
+    justify-content: center;
+}
+
+
+/* ========================================
+   REVEAL
+======================================== */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(26px);
+
+    transition:
+        opacity 0.75s ease,
+        transform 0.75s ease;
+}
+
+.reveal.is_visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* ========================================
+   REDUCED MOTION
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+    .reveal {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+
+    .about_gallery_item img,
+    .button,
+    .about_create_card {
+        transition: none;
+    }
+}
+
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 960px) {
+    .about_hero_inner,
+    .about_philosophy_inner {
+        grid-template-columns: 1fr;
+    }
+
+    .about_hero_image {
+        min-height: auto;
+        aspect-ratio: 1 / 1;
+    }
+
+    .about_hero_content {
+        max-width: 720px;
+        margin-inline: auto;
+        text-align: center;
+    }
+
+    .about_hero_text {
+        margin-inline: auto;
+    }
+
+    .about_hero_actions {
+        justify-content: center;
+    }
+
+    .about_create_grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about_create_card {
+        min-height: auto;
+    }
+
+    .about_philosophy_image {
+        width: min(620px, 100%);
+        margin-inline: auto;
+    }
+
+    .about_gallery_grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .about_gallery_item_wide {
+        grid-column: span 2;
+    }
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 680px) {
+
+    .about_hero_content h1 {
+        font-size: clamp(3rem, 16vw, 4.6rem);
+    }
+
+    .about_hero_actions,
+    .about_cta_actions {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .button {
+        width: 100%;
+    }
+
+    /* 手機版時間軸改成左側單線 */
+    .timeline {
+        gap: 28px;
+        padding-left: 28px;
+    }
+
+    .timeline::before {
+        left: 7px;
+        transform: none;
+    }
+
+    .timeline_item,
+    .timeline_item:nth-child(odd),
+    .timeline_item:nth-child(even) {
+        width: 100%;
+        justify-self: stretch;
+        padding: 22px 24px;
+        text-align: left;
+    }
+
+    .timeline_item:nth-child(odd) .timeline_marker,
+    .timeline_item:nth-child(even) .timeline_marker {
+        top: 28px;
+        left: -28px;
+        right: auto;
+    }
+
+    .about_numbers_grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about_number_item + .about_number_item {
+        border-top: 1px solid var(--color-border);
+        border-left: 0;
+    }
+
+    .about_gallery_grid {
+        grid-template-columns: 1fr;
+        grid-auto-rows: 260px;
+    }
+
+    .about_gallery_item_large,
+    .about_gallery_item_wide {
+        grid-row: auto;
+        grid-column: auto;
+    }
+
+    .about_cta_inner {
+        text-align: center;
+    }
+
+    .about_cta_actions {
+        justify-content: center;
+    }
+}

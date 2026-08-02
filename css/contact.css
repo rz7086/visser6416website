@@ -1,0 +1,590 @@
+.contact_page {
+    padding-top: 52px;
+    text-align: left;
+}
+.contact_header {
+    padding: var(--space-xl) 0 var(--space-xl);
+    text-align: center;
+    background:
+        radial-gradient(circle at center, rgba(158, 130, 179, 0.16), transparent 55%),
+        var(--color-bg);
+}
+.contact_header_inner {
+    width: min(760px, 100%);
+    margin-inline: auto;
+    text-align: center;
+}
+
+.contact_header h1 {
+    margin-bottom: var(--space-sm);
+    font-size: var(--font-xl);
+    color:var(--color-text);
+}
+
+.contact_header p:last-child {
+    margin-inline: auto;
+    margin-bottom: 0px;
+    max-width: 640px;
+    color: var(--color-text-muted);
+    font-size: var(--font-md);
+}
+
+
+/* ========================================
+   CONTACT LINKS
+======================================== */
+
+.contact_links {
+    padding-bottom: var(--space-2xl);
+}
+
+.contact_grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--space-lg);
+    margin-top: var(--space-lg);
+}
+
+
+/* ========================================
+   CONTACT CARD
+======================================== */
+
+.contact_card {
+    --contact-accent: var(--color-primary);
+
+    position: relative;
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+
+    min-width: 0;
+    aspect-ratio: auto;
+
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+
+    background: var(--color-surface);
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.contact_card:hover {
+    transform: translateY(-6px);
+    border-color: var(--contact-accent);
+    box-shadow: 0 22px 50px rgba(0, 0, 0, 0.28);
+}
+
+.contact_card img {
+    position: static;
+
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    display: block;
+
+    object-fit: cover;
+
+    transition:
+        transform 0.55s ease,
+        filter 0.55s ease;
+}
+
+.contact_card:hover img {
+    transform: scale(1.055);
+    filter: saturate(1.1);
+}
+
+.contact_card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+
+    opacity: 0;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(115, 182, 143, 0.28),
+            transparent 65%
+        );
+
+    transition:
+        opacity var(--transition-fast);
+}
+
+.contact_card:hover::after {
+    opacity: 1;
+}
+
+
+/* ========================================
+   CARD CONTENT
+======================================== */
+
+.contact_card_content {
+    position: static;
+
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 14px;
+
+    padding: 18px 20px;
+
+    background: var(--color-surface);
+}
+
+.contact_card_icon {
+    display: grid;
+    width: 46px;
+    height: 46px;
+    place-items: center;
+
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+
+    background: rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(10px);
+
+    font-size: 1.2rem;
+}
+
+.contact_card_text {
+    display: grid;
+    min-width: 0;
+    gap: 4px;
+}
+
+.contact_card_text strong {
+    overflow: hidden;
+    font-size: clamp(1.2rem, 2vw, 1.55rem);
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.contact_card_text span {
+    overflow: hidden;
+    color: rgba(255, 255, 255, 0.72);
+    font-size: 0.88rem;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.contact_card_arrow {
+    opacity: 0.7;
+
+    transition:
+        opacity var(--transition-fast),
+        transform var(--transition-fast);
+}
+
+.contact_card:hover .contact_card_arrow {
+    opacity: 1;
+    transform: translate(3px, -3px);
+}
+
+
+.contact_link {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+
+    padding: 22px;
+
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+
+    background: var(--color-surface);
+
+    color: var(--color-text);
+    text-decoration: none;
+
+    transition:
+        border-color .25s,
+        transform .25s;
+}
+
+.contact_link:hover {
+    transform: translateY(-3px);
+    border-color: var(--contact-accent);
+}
+
+
+/* ========================================
+   PLATFORM COLORS
+======================================== */
+
+.contact_card_youtube {
+    --contact-accent: #ff0000;
+}
+
+.contact_card_twitch {
+    --contact-accent: #9146ff;
+}
+
+.contact_card_twitter {
+    --contact-accent: #4aa8e8;
+}
+
+.contact_card_linktree {
+    --contact-accent: #43e660;
+}
+
+.contact_card_clibo {
+    --contact-accent: #ff8c00;
+}
+
+.contact_card_discord {
+    --contact-accent: #7289da;
+}
+
+
+/* ========================================
+   MESSAGE
+======================================== */
+
+.contact_message {
+    padding-block: var(--space-2xl);
+    border-top: 1px solid var(--color-border);
+}
+
+.contact_message_heading {
+    width: min(720px, 100%);
+    margin: 0 auto var(--space-xl);
+    text-align: center;
+}
+
+.contact_message_heading h2 {
+    margin: 0.25em 0 0.4em;
+    font-size: var(--font-xl);
+}
+
+.contact_message_heading p:last-child {
+    margin-inline: auto;
+    color: var(--color-text-muted);
+    line-height: 1.8;
+}
+
+.comment_box {
+    width: min(900px, 100%);
+    margin-inline: auto;
+    padding: clamp(20px, 4vw, 42px);
+
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+
+    background: var(--color-surface);
+}
+
+.comment_box_placeholder {
+    display: grid;
+    min-height: 230px;
+    place-items: center;
+    align-content: center;
+    gap: 14px;
+
+    color: var(--color-text-muted);
+    text-align: center;
+}
+
+.comment_box_placeholder i {
+    color: var(--color-primary);
+    font-size: 2rem;
+}
+
+.comment_box_placeholder p {
+    margin: 0;
+}
+
+
+/* ========================================
+   REVEAL
+======================================== */
+
+/*
+   預設直接顯示，避免 JS 沒載入時整頁透明
+*/
+
+.reveal {
+    opacity: 1;
+    transform: none;
+}
+
+/*
+   只有 html 加上 js_ready 時才啟用動畫
+*/
+
+html.js_ready .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+
+    transition:
+        opacity 0.7s ease,
+        transform 0.7s ease;
+}
+
+html.js_ready .reveal.is_visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 960px) {
+    .contact_grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 680px) {
+
+    .contact_grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .contact_card {
+        aspect-ratio: 16 / 10;
+    }
+
+    .contact_card_content {
+        padding: 20px;
+    }
+
+    .contact_message {
+        padding-block: var(--space-xl);
+    }
+
+    .comment_box {
+        padding: 18px;
+    }
+}
+
+
+/* ========================================
+   REDUCED MOTION
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+    html.js_ready .reveal,
+    html.js_ready .reveal.is_visible {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+
+    .contact_card,
+    .contact_card img,
+    .contact_card_arrow {
+        transition: none;
+    }
+}
+
+/* ========================================
+   HTML COMMENT BOX — 覆蓋樣式
+======================================== */
+
+/* 外層只保留一層框 */
+.comment_box {
+    width: min(900px, 100%);
+    margin-inline: auto;
+    padding: 0;
+
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+}
+
+/* 留言板內層 */
+#HCB_comment_box {
+    padding: clamp(24px, 4vw, 40px) !important;
+
+    border: 1px solid var(--color-border) !important;
+    border-radius: var(--radius-lg) !important;
+
+    background: var(--color-surface) !important;
+    color: var(--color-text) !important;
+
+    font-family: inherit !important;
+}
+
+/* 移除它可能生成的第二層框 */
+#HCB_comment_box .hcb-wrapper,
+#HCB_comment_box .hcb-comment-tb,
+#HCB_comment_box .hcb-comment-body,
+#HCB_comment_box form {
+    border: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+}
+
+/* 標題 */
+#HCB_comment_box h3 {
+    margin: 0 0 20px !important;
+    color: var(--color-text) !important;
+    font-family: inherit !important;
+    font-size: 1.8rem !important;
+}
+
+/* 名稱輸入欄 */
+#HCB_comment_box input[type="text"],
+#HCB_comment_box input[type="email"],
+#HCB_comment_box input[type="url"] {
+    width: 100% !important;
+    min-height: 44px !important;
+    padding: 10px 14px !important;
+
+    border: 1px solid var(--color-border) !important;
+    border-radius: 10px !important;
+
+    background: var(--color-background) !important;
+    color: var(--color-text) !important;
+
+    font-family: inherit !important;
+    box-shadow: none !important;
+}
+
+/* 留言輸入框 */
+#HCB_comment_box textarea {
+    width: 100% !important;
+    min-height: 150px !important;
+    padding: 12px 14px !important;
+
+    border: 1px solid var(--color-border) !important;
+    border-radius: 10px !important;
+
+    background: var(--color-background) !important;
+    color: var(--color-text) !important;
+
+    font-family: inherit !important;
+    line-height: 1.7 !important;
+
+    box-sizing: border-box !important;
+    resize: vertical !important;
+    box-shadow: none !important;
+}
+
+/* placeholder */
+#HCB_comment_box input::placeholder,
+#HCB_comment_box textarea::placeholder {
+    color: var(--color-text-muted) !important;
+    opacity: 1 !important;
+}
+
+/* focus */
+#HCB_comment_box input:focus,
+#HCB_comment_box textarea:focus {
+    outline: none !important;
+    border-color: var(--color-primary) !important;
+    box-shadow: 0 0 0 3px rgba(172, 135, 201, 0.14) !important;
+}
+
+/* 按鈕列 */
+#HCB_comment_box .submit,
+#HCB_comment_box form > div:last-child {
+    display: flex !important;
+    align-items: center !important;
+    flex-wrap: wrap !important;
+    gap: 12px !important;
+}
+
+/* 所有按鈕 */
+#HCB_comment_box input[type="submit"],
+#HCB_comment_box button,
+#HCB_comment_box .btn {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    min-height: 42px !important;
+    margin: 0 !important;
+    margin-right: 12px !important;
+    padding: 9px 18px !important;
+
+    border: 1px solid var(--color-border) !important;
+    border-radius: var(--radius-pill) !important;
+
+    background: #a970ff !important;
+    color: #ffffff !important;
+
+    font-family: inherit !important;
+    font-weight: 700 !important;
+
+    cursor: pointer !important;
+    box-shadow: none !important;
+}
+
+/* 第二顆按鈕 */
+#HCB_comment_box .btn-secondary,
+#HCB_comment_box input[type="button"] {
+    background: transparent !important;
+    color: var(--color-text) !important;
+}
+
+/* hover */
+#HCB_comment_box input[type="submit"]:hover,
+#HCB_comment_box button:hover,
+#HCB_comment_box .btn:hover {
+    border-color: #ffffff !important;
+    background: #ffffff !important;
+    color: #a970ff !important;
+}
+
+/* 留言區文字 */
+#HCB_comment_box p,
+#HCB_comment_box span,
+#HCB_comment_box label,
+#HCB_comment_box div {
+    font-family: inherit;
+}
+
+/* 連結 */
+#HCB_comment_box a {
+    color: var(--color-primary) !important;
+}
+
+/* RSS 圖示與多餘元素，可選擇隱藏 */
+#HCB_comment_box .rss,
+#HCB_comment_box .hcb-icon {
+    opacity: 0.65;
+}
+
+
+#HCB_comment_box .home-desc,
+#HCB_comment_box .home-desc a,
+#HCB_comment_box .home-desc span {
+    display: none !important;
+    visibility: hidden !important;
+    height: 0 !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+}
+
+/* 手機 */
+@media (max-width: 680px) {
+    #HCB_comment_box {
+        padding: 20px !important;
+    }
+
+    #HCB_comment_box h3 {
+        font-size: 1.5rem !important;
+    }
+
+    #HCB_comment_box input[type="submit"],
+    #HCB_comment_box button,
+    #HCB_comment_box .btn {
+        width: 100% !important;
+    }
+}

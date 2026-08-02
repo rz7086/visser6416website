@@ -1,0 +1,977 @@
+/* ========================================
+   COMMISSION PAGE
+======================================== */
+
+.commission_page {
+    overflow-x: hidden;
+}
+
+.commission_section,
+.terms_section {
+    padding-block: var(--space-2xl);
+}
+
+
+/* ========================================
+   SECTION HEADING
+======================================== */
+
+.section_heading {
+    width: min(760px, 100%);
+    margin: 0 auto var(--space-xl);
+    text-align: center;
+}
+
+.section_heading h2 {
+    margin: 0.25em 0 0.4em;
+}
+
+.section_heading p:last-child {
+    color: var(--color-text-muted);
+    line-height: 1.85;
+}
+
+
+/* ========================================
+   HERO
+======================================== */
+
+.commission_hero {
+    padding-block:
+        calc(var(--space-2xl) + 32px)
+        var(--space-2xl);
+}
+
+.commission_hero_inner {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    align-items: center;
+    gap: clamp(40px, 7vw, 100px);
+}
+
+.commission_hero h1 {
+    margin: 0.18em 0;
+    font-size: clamp(3rem, 7vw, 6.6rem);
+    line-height: 0.98;
+    letter-spacing: -0.055em;
+}
+
+.commission_lead {
+    font-size: clamp(1.2rem, 2.2vw, 1.75rem);
+    font-weight: 700;
+    line-height: 1.65;
+}
+
+.commission_note {
+    color: var(--color-text-muted);
+    line-height: 1.85;
+}
+
+.commission_actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: var(--space-lg);
+    justify-content: center;
+}
+
+.commission_visual {
+    display: grid;
+    aspect-ratio: 1;
+    place-items: center;
+    align-content: center;
+    gap: 24px;
+
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+
+    background:
+        radial-gradient(
+            circle at 25% 20%,
+            rgba(172, 135, 201, 0.22),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 80% 85%,
+            rgba(115, 182, 143, 0.18),
+            transparent 38%
+        ),
+        var(--color-surface);
+
+    text-align: center;
+}
+
+.commission_visual i {
+    color: var(--color-primary);
+    font-size: clamp(4rem, 8vw, 7rem);
+}
+
+.commission_visual span {
+    color: var(--color-text-muted);
+    font-size: 1.25rem;
+    line-height: 1.6;
+}
+
+
+/* ========================================
+   BUTTONS
+======================================== */
+
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+
+    min-height: 46px;
+    padding: 0 20px;
+
+    border: 1px solid transparent;
+    border-radius: var(--radius-pill);
+
+    text-decoration: none;
+    font: inherit;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        color var(--transition-fast),
+        border-color var(--transition-fast),
+        background-color var(--transition-fast),
+        transform var(--transition-fast);
+}
+
+.button:hover {
+    transform: translateY(-2px);
+}
+
+
+/* 主要按鈕：紫框＋紫字，hover 白底 */
+
+.button_primary {
+    border-color: #ff8c00;
+    background: transparent;
+    color: #ff8c00;
+}
+
+.button_primary:hover {
+    border-color: #ffffff;
+    background: #ffffff;
+}
+
+
+/* 副按鈕：白框＋白字，hover 綠底 */
+
+.button_secondary {
+    border-color: #ffffff;
+    background: transparent;
+    color: #ffffff;
+}
+
+.button_secondary:hover {
+    border-color: #8fd694;
+    background: #8fd694;
+    color: #ffffff;
+}
+
+
+/* =========================
+   Commission Examples Carousel
+   ========================= */
+
+.commission_examples {
+    overflow: hidden;
+    padding: var(--space-2xl) 0;
+    background: var(--color-bg);
+}
+
+.commission_examples_container {
+    width: min(var(--container-wide), 90vw);
+    margin-inline: auto;
+}
+
+.commission_examples_heading {
+    margin-bottom: var(--space-xl);
+    text-align: center;
+}
+
+.commission_examples_heading p {
+    margin-bottom: var(--space-xs);
+
+    color: var(--color-accent);
+    font-size: var(--font-xs);
+    font-weight: 700;
+    letter-spacing: 4px;
+}
+
+.commission_examples_heading h2 {
+    margin: 0;
+
+    color: var(--color-text);
+    font-size: var(--font-xl);
+    line-height: 1.15;
+}
+
+
+/* 輪播外框 */
+
+.featured_carousel {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* 卡片活動區 */
+
+.featured_track {
+    position: relative;
+
+    width: min(1000px, 90vw);
+
+    height: clamp(
+        390px,
+        calc(50.625vw + 110px),
+        673px
+    );
+}
+
+
+/* 單張作品卡 */
+
+.featured_card {
+    position: absolute;
+    top: 0;
+    left: 50%;
+
+    width: 100%;
+
+    opacity: 0;
+    pointer-events: none;
+    filter: brightness(0.55);
+
+    transform:
+        translateX(-50%)
+        scale(0.72);
+
+    transition:
+        transform 0.55s ease,
+        opacity 0.55s ease,
+        filter 0.55s ease;
+}
+
+
+/* 中央卡片 */
+
+.featured_card.is_active {
+    z-index: 3;
+
+    opacity: 1;
+    pointer-events: auto;
+    filter: brightness(1);
+
+    transform:
+        translateX(-50%)
+        scale(1);
+}
+
+
+/* 前一張 */
+
+.featured_card.is_previous {
+    z-index: 2;
+
+    opacity: 0.55;
+
+    transform:
+        translateX(-105%)
+        scale(0.72)
+        rotateY(10deg);
+}
+
+
+/* 下一張 */
+
+.featured_card.is_next {
+    z-index: 2;
+
+    opacity: 0.55;
+
+    transform:
+        translateX(5%)
+        scale(0.72)
+        rotateY(-10deg);
+}
+
+
+/* 影片區 */
+
+.featured_video {
+    overflow: hidden;
+
+    width: 100%;
+    aspect-ratio: 16 / 9;
+
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+
+    background: #000000;
+    box-shadow: var(--shadow-card);
+}
+
+.featured_video iframe {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    border: 0;
+}
+
+
+/* 標題與說明 */
+
+.featured_card h3 {
+    margin:
+        var(--space-md)
+        0
+        var(--space-xs);
+
+    color: var(--color-text);
+    font-size: var(--font-lg);
+    line-height: 1.25;
+    text-align: center;
+}
+
+.featured_card p {
+    margin: 0;
+
+    color: var(--color-text-muted);
+    line-height: 1.7;
+    text-align: center;
+    white-space: pre-line;
+}
+
+.featured_client {
+    margin: 0;
+    color: var(--color-text-muted);
+    text-align: center;
+}
+
+.featured_client::first-letter {
+    color: var(--color-primary);
+}
+
+
+/* 左右按鈕 */
+
+.featured_button {
+    position: absolute;
+    z-index: 5;
+
+    display: grid;
+    width: 54px;
+    height: 54px;
+    place-items: center;
+
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--color-text);
+
+    font-size: 20px;
+    cursor: pointer;
+    backdrop-filter: blur(10px);
+
+    transition:
+        transform var(--transition-fast),
+        border-color var(--transition-fast),
+        background-color var(--transition-fast),
+        color var(--transition-fast);
+}
+
+.featured_button:hover {
+    transform: scale(1.1);
+
+    border-color: var(--color-primary);
+    background: var(--color-primary);
+    color: #111111;
+}
+
+.featured_previous {
+    left: 2%;
+}
+
+.featured_next {
+    right: 2%;
+}
+
+
+/* 分頁點 */
+
+.featured_dots {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+
+    margin-top: 20px;
+}
+
+.featured_dot {
+    width: 9px;
+    height: 9px;
+    padding: 0;
+
+    border: 0;
+    border-radius: var(--radius-pill);
+
+    background: #666666;
+    cursor: pointer;
+
+    transition:
+        width 0.3s ease,
+        background-color 0.3s ease;
+}
+
+.featured_dot.is_active {
+    width: 32px;
+    background: var(--color-accent);
+}
+
+
+/* 沒有資料或載入失敗 */
+
+.commission_examples_status {
+    padding: var(--space-lg);
+    color: var(--color-text-muted);
+    text-align: center;
+}
+
+
+/* =========================
+   Tablet
+   ========================= */
+
+@media (max-width: 960px) {
+    .featured_track {
+        width: min(820px, 100vw);
+
+        height: clamp(
+            350px,
+            calc(50vw + 90px),
+            570px
+        );
+    }
+
+    .featured_card.is_previous {
+        transform:
+            translateX(-96%)
+            scale(0.68);
+    }
+
+    .featured_card.is_next {
+        transform:
+            translateX(-4%)
+            scale(0.68);
+    }
+
+    .featured_previous {
+        left: 1%;
+    }
+
+    .featured_next {
+        right: 1%;
+    }
+}
+
+
+/* =========================
+   Mobile
+   ========================= */
+
+@media (max-width: 680px) {
+
+    .featured_track {
+        width: 100%;
+
+        height: clamp(
+            300px,
+            calc(50vw + 90px),
+            480px
+        );
+    }
+
+    .featured_card {
+        transform:
+            translateX(-50%)
+            scale(0.9);
+    }
+
+    .featured_card.is_active {
+        transform:
+            translateX(-50%)
+            scale(1);
+    }
+
+    /*
+       手機不顯示左右側卡片，
+       避免畫面太擠。
+    */
+
+    .featured_card.is_previous,
+    .featured_card.is_next {
+        opacity: 0;
+        transform:
+            translateX(-50%)
+            scale(0.9);
+    }
+
+    .featured_button {
+        width: 44px;
+        height: 44px;
+
+        font-size: 16px;
+    }
+
+    .featured_previous {
+        left: 10px;
+    }
+
+    .featured_next {
+        right: 10px;
+    }
+
+    .featured_card h3 {
+        font-size: clamp(1.25rem, 6vw, 1.65rem);
+    }
+
+    .featured_card p {
+        padding-inline: 12px;
+        font-size: 0.92rem;
+    }
+}
+
+
+/* =========================
+   Reduced Motion
+   ========================= */
+
+@media (prefers-reduced-motion: reduce) {
+    .featured_card,
+    .featured_button,
+    .featured_dot {
+        transition: none;
+    }
+}
+
+
+
+/* ========================================
+   PRICING
+======================================== */
+
+.pricing_grid,
+.terms_grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--space-lg);
+}
+
+.pricing_card,
+.terms_card {
+    position: relative;
+    padding: clamp(24px, 3vw, 36px);
+
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+
+    background: var(--color-surface);
+}
+
+.pricing_card {
+    display: flex;
+    flex-direction: column;
+
+    transition:
+        transform var(--transition-fast),
+        border-color var(--transition-fast),
+        box-shadow var(--transition-fast);
+}
+
+.pricing_card:hover {
+    transform: translateY(-5px);
+    border-color: var(--color-primary);
+    box-shadow: 0 18px 42px rgba(0, 0, 0, 0.2);
+}
+
+.pricing_featured {
+    border-color: var(--color-primary);
+}
+
+.pricing_badge {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+
+    padding: 5px 9px;
+
+    border-radius: var(--radius-pill);
+    background: var(--color-primary);
+    color: #ffffff;
+
+    font-size: 0.72rem;
+    font-weight: 800;
+}
+
+.pricing_icon {
+    display: flex;
+    width: 50px;
+    height: 50px;
+    flex: 0 0 50px;
+
+    align-items: center;
+    justify-content: center;
+
+    margin-inline: auto;
+
+    border-radius: 50%;
+    background: rgba(172, 135, 201, 0.14);
+    color: var(--color-primary);
+}
+
+.pricing_icon i {
+    display: block;
+    margin: 0;
+    padding: 0;
+
+    font-size: 1.15rem;
+    line-height: 1;
+}
+
+.pricing_type {
+    margin: 1.2rem 0 0;
+
+    color: var(--color-text-muted);
+
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+}
+
+.pricing_card h3 {
+    margin: 0.2rem 0;
+    font-size: 1.5rem;
+}
+
+.pricing_duration {
+    color: var(--color-primary);
+    font-weight: 700;
+}
+
+.pricing_card > p:not(.pricing_type, .pricing_duration) {
+    color: var(--color-text-muted);
+    line-height: 1.85;
+}
+
+.pricing_price {
+    display: grid;
+    gap: 5px;
+
+    margin-top: auto;
+    padding-top: 2rem;
+}
+
+.pricing_price span,
+.pricing_price small {
+    color: var(--color-text-muted);
+}
+
+.pricing_price strong {
+    font-size: clamp(2rem, 4vw, 3.2rem);
+}
+
+
+/* ========================================
+   SURPRISE PACK
+======================================== */
+
+.surprise_section {
+    padding-block: clamp(80px, 10vw, 150px);
+
+    border-block: 1px solid var(--color-border);
+
+    background: var(--color-surface);
+}
+
+.surprise_inner {
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    align-items: center;
+    gap: clamp(40px, 8vw, 100px);
+}
+
+.surprise_inner h2 {
+    font-size: clamp(2.3rem, 5vw, 4.8rem);
+}
+
+.surprise_inner p:not(.section_label) {
+    color: var(--color-text-muted);
+    line-height: 1.95;
+}
+
+.surprise_points {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+}
+
+.surprise_points span {
+    display: grid;
+    min-height: 140px;
+    padding: 20px;
+    place-items: center;
+    align-content: center;
+    gap: 12px;
+
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+
+    text-align: center;
+}
+
+.surprise_points i {
+    color: var(--color-primary);
+    font-size: 1.4rem;
+}
+
+.surprise_notice {
+    margin-top: var(--space-xl);
+    padding: 30px;
+
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+
+    color: var(--color-text-muted);
+    text-align: center;
+}
+
+.surprise_notice strong {
+    display: block;
+    margin-top: 10px;
+    color: #8fd694;
+}
+
+
+/* ========================================
+   PROCESS
+======================================== */
+
+.process_list {
+    display: grid;
+    gap: 16px;
+
+    width: min(960px, 100%);
+    margin-inline: auto;
+}
+
+.process_item {
+    display: grid;
+    grid-template-columns: 90px minmax(0, 1fr);
+    gap: 24px;
+
+    padding: clamp(24px, 4vw, 38px);
+    align-items: center;
+
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+
+    background: var(--color-surface);
+}
+
+.process_item_text_area {
+    text-align: left;
+    align-self: center;
+}
+
+.process_item p {
+    margin-bottom: 0;
+}
+
+.process_item b {
+    color: var(--color-primary);
+
+    font-family: monospace;
+    font-size: clamp(2rem, 4vw, 3.6rem);
+    font-weight: 800;
+    line-height: 1;
+}
+
+.process_item h3 {
+    margin: 0;
+}
+
+.process_item p {
+    color: var(--color-text-muted);
+    line-height: 1.85;
+}
+
+.process_item em {
+    color: var(--color-primary);
+    font-style: normal;
+}
+
+.process_tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+
+    margin-top: 1rem;
+}
+
+.process_tags span {
+    padding: 7px 11px;
+
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-pill);
+
+    color: var(--color-text-muted);
+    font-size: 0.85rem;
+}
+
+
+/* ========================================
+   TERMS
+======================================== */
+
+.terms_section {
+    border-top: 1px solid var(--color-border);
+}
+
+.terms_card i {
+    color: var(--color-primary);
+    font-size: 1.6rem;
+}
+
+.terms_card p {
+    color: var(--color-text-muted);
+    line-height: 1.85;
+}
+
+
+/* ========================================
+   CTA
+======================================== */
+
+.commission_cta {
+    padding-block: clamp(90px, 12vw, 170px);
+}
+
+.commission_cta_inner {
+    padding: clamp(38px, 7vw, 90px);
+
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+
+    background: var(--color-surface);
+
+    text-align: center;
+}
+
+.commission_cta h2 {
+    font-size: clamp(2.2rem, 5vw, 4.8rem);
+}
+
+.commission_cta p:not(.section_label) {
+    color: var(--color-text-muted);
+}
+
+
+/* ========================================
+   REVEAL
+======================================== */
+
+.reveal {
+    opacity: 1;
+    transform: none;
+}
+
+html.js_ready .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+
+    transition:
+        opacity 0.7s ease,
+        transform 0.7s ease;
+}
+
+html.js_ready .reveal.is_visible {
+    opacity: 1;
+    transform: none;
+}
+
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 960px) {
+    .commission_hero_inner,
+    .surprise_inner {
+        grid-template-columns: 1fr;
+    }
+
+    .commission_visual {
+        width: min(560px, 100%);
+        margin-inline: auto;
+    }
+
+    .pricing_grid,
+    .terms_grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 680px) {
+    .commission_actions {
+        flex-direction: column;
+    justify-content: center;
+    }
+
+    .button {
+        width: 100%;
+    }
+
+    .surprise_points {
+        grid-template-columns: 1fr;
+    }
+
+    .process_item {
+        grid-template-columns: 1fr;
+    }
+
+    .process_item b {
+        font-size: 1.3rem;
+    }
+}
+
+
+/* ========================================
+   REDUCED MOTION
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+    html.js_ready .reveal {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+}

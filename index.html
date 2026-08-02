@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>惟瑟 Visser</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+
+<body>
+
+    <header>
+
+        <div id="navbar"></div>
+    </header>
+
+    <main>
+        
+        <!-- Hero -->
+        <section id="hero">
+            <div class="hero_box">
+                <div class="hero_content">
+                    <h1>惟瑟 Visser</h1>
+
+                    <p>
+                        織思者｜獨立音樂亂做人｜或許勢 Vtuber
+                    </p>
+
+                    <p>
+                        一隻總在進退兩難間掙扎的奇美拉
+                    </p>
+                </div>
+            </div>
+
+            <!-- 共用社群連結元件 -->
+            <div id="media_link"></div>
+        </section>
+
+
+        <!-- 精選作品 -->
+        <section class="featured">
+            <div class="featured_container">
+
+                <div class="featured_heading">
+                    <p>FEATURED WORKS</p>
+                    <h2>精選作品</h2>
+                </div>
+
+                <div class="featured_carousel">
+
+                    <button
+                        class="featured_button featured_previous"
+                        type="button"
+                        aria-label="上一首作品"
+                    >
+                        <i
+                            class="fa-solid fa-chevron-left"
+                            aria-hidden="true"
+                        ></i>
+                    </button>
+
+                    <div class="featured_track">
+
+                        <article class="featured_card">
+                            <div class="featured_video">
+                                <iframe
+                                    src="https://www.youtube.com/embed/m4bQFVWHUmc"
+                                    title="有限性 / Finite"
+                                    loading="lazy"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                    referrerpolicy="strict-origin-when-cross-origin"
+                                    allowfullscreen
+                                ></iframe>
+                            </div>
+
+                            <h3>有限性 / Finite</h3>
+                            <p>The limit makes every struggle valid.</p>
+                            <p>邊界的存在令每一個掙扎都真實。</p>
+                        </article>
+
+
+                        <article class="featured_card">
+                            <div class="featured_video">
+                                <iframe
+                                    src="https://www.youtube.com/embed/i2TbQuU0Tdk"
+                                    title="奔波 / Bustle"
+                                    loading="lazy"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                    referrerpolicy="strict-origin-when-cross-origin"
+                                    allowfullscreen
+                                ></iframe>
+                            </div>
+
+                            <h3>奔波 / Bustle</h3>
+                            <p>
+                                This untidy 5/8 beat depicts our staggering pace chasing every moment.
+                            </p>
+                            <p>
+                                這不工整的 5/8 拍，正描繪著我們追逐每個瞬間的踉蹌步伐。
+                            </p>
+                        </article>
+
+
+                        <article class="featured_card">
+                            <div class="featured_video">
+                                <iframe
+                                    src="https://www.youtube.com/embed/odHLyCwJwQ4"
+                                    title="C8H10N4O2 / 咖啡因"
+                                    loading="lazy"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                    referrerpolicy="strict-origin-when-cross-origin"
+                                    allowfullscreen
+                                ></iframe>
+                            </div>
+
+                            <h3>C8H10N4O2 / 咖啡因</h3>
+                            <p>Are you a coffee drinker?</p>
+                            <p>你是個喝咖啡的人嗎？</p>
+                        </article>
+
+
+                        <article class="featured_card">
+                            <div class="featured_video">
+                                <iframe
+                                    src="https://www.youtube.com/embed/I67ooqE2T78"
+                                    title="Delusion Experience / 幻惑體驗"
+                                    loading="lazy"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                    referrerpolicy="strict-origin-when-cross-origin"
+                                    allowfullscreen
+                                ></iframe>
+                            </div>
+
+                            <h3>Delusion Experience / 幻惑體驗</h3>
+                            <p>Every truth you think is a deeper illusion</p>
+                            <p>你以為的每個真相，都是更深一層的幻覺。</p>
+                        </article>
+
+                    </div>
+
+                    <button
+                        class="featured_button featured_next"
+                        type="button"
+                        aria-label="下一首作品"
+                    >
+                        <i
+                            class="fa-solid fa-chevron-right"
+                            aria-hidden="true"
+                        ></i>
+                    </button>
+
+                    
+
+                </div>
+                <div
+                    class="featured_dots"
+                    aria-label="精選作品切換"
+                ></div>
+            </div>
+        </section>
+
+
+
+        <section class="latest_work">
+
+            <div class="latest_headin">
+                <p class="latest_label">LATEST WORK</p>
+                <h2>最新作品</h2>
+            </div>
+
+            <div class="latest_video">
+                <iframe
+                    id="latest_video"
+                    title="最新作品播放器"
+                    loading="lazy"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    allowfullscreen
+                ></iframe>
+            </div>
+
+            <div class="latest_text">
+                <h3 id="latest_title">
+                    載入中……
+                </h3>
+
+                <p id="latest_intro"></p>
+
+                <a
+                    id="latest_link"
+                    href="#"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    前往 YouTube
+                </a>
+            </div>
+
+        </section>
+    </main>
+
+    <footer id="footer"></footer>
+    <div
+        class="copyright_modal"
+        id="copyright_modal"
+        aria-hidden="true"
+    >
+        <div
+            class="copyright_dialog"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="copyright_title"
+        >
+            <button
+                class="copyright_close"
+                id="copyright_close"
+                type="button"
+                aria-label="關閉版權資訊"
+            >
+                <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+            </button>
+
+            <p class="section_label">COPYRIGHT</p>
+
+            <h2 id="copyright_title">
+                © 2026 Visser
+            </h2>
+
+            <p>
+                All Rights Reserved.
+            </p>
+
+            <p class="copyright_description">
+                本站所有原創音樂、文字、圖片與其他內容，
+                除另有標示外，均由 Visser 保留相關權利。
+                部分作品可能採用不同授權方式，
+                請以各作品的個別說明為準。
+            </p>
+
+            <button
+                class="copyright_confirm"
+                id="copyright_confirm"
+                type="button"
+            >
+                確認
+            </button>
+        </div>
+    </div>
+    <button
+        id="back_to_top"
+        type="button"
+        aria-label="回到頂端"
+    >
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+    <script src="js/script.js"></script>
+</body>
+</html>
