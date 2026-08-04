@@ -510,13 +510,17 @@ const sheetName =
 
 const sheetQuery =
     encodeURIComponent(
-        "select A, D, E limit 1 offset 1"
+        "select A, D, E limit 1"
     );
 
-const sheetUrl =
-    `https://docs.google.com/spreadsheets/d/${sheetId}` +
-    `/gviz/tq?sheet=${encodeURIComponent(sheetName)}` +
-    `&tq=${sheetQuery}`;
+function getLatestSheetUrl() {
+    return (
+        `https://docs.google.com/spreadsheets/d/${sheetId}` +
+        `/gviz/tq?sheet=${encodeURIComponent(sheetName)}` +
+        `&tq=${sheetQuery}` +
+        `&_=${Date.now()}`
+    );
+}
 
 
 function initLatestWork() {
@@ -574,9 +578,14 @@ function getLatestWorkElements() {
 
 
 async function loadLatestWork(elements) {
+    
     try {
-        const response =
-            await fetch(sheetUrl);
+        const response = await fetch(
+            getLatestSheetUrl(),
+            {
+                cache: "no-store"
+            }
+        );
 
         if (!response.ok) {
             throw new Error(
@@ -615,6 +624,8 @@ async function loadLatestWork(elements) {
 
         const intro =
             getFirstTwoLines(description);
+
+        console.log(videoUrl);
 
         elements.title.textContent =
             title || "最新作品";
@@ -658,6 +669,7 @@ async function loadLatestWork(elements) {
             "src"
         );
     }
+    
 }
 
 
