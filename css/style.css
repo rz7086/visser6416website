@@ -1174,3 +1174,27 @@ body.modal_open {
         padding: 30px 22px 24px;
     }
 }
+
+
+
+
+/* CSS TUBER */
+#csstuberFrame{
+
+    position:fixed;
+
+    left:0;
+    bottom:0;
+
+    width:400px;
+    height:500px;
+
+    border:none;
+
+    background:transparent;
+
+    overflow:hidden;
+
+    z-index:99999;
+    pointer-events: none;
+}
