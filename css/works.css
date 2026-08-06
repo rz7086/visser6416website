@@ -271,11 +271,10 @@
 }
 
 .work_meta {
-    display: flex;
+    display:contents;
     align-items: center;
     justify-content: space-between;
     gap: var(--space-sm);
-    margin-bottom: var(--space-sm);
 }
 
 .work_category {
@@ -289,12 +288,12 @@
 .work_tags {
     color: var(--color-primary);
     font-size: 0.8rem;
-    margin-bottom: 8px;
 }
 
 .work_date {
     color: #929292;
     font-size: clamp(7px, 2vw, 11px);
+    padding-bottom: var(--space-sm);
 }
 
 .work_title {
@@ -312,6 +311,7 @@
     color: var(--color-text-muted);
     line-height: 1.75;
     white-space: pre-line;
+    font-size: clamp(11px, 2vw, 14px);
 }
 
 .sr_only {
