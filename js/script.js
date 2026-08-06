@@ -20,17 +20,17 @@ document.addEventListener("DOMContentLoaded", () => {
 async function loadSharedComponents() {
     await loadComponent(
         "navbar",
-        "./components/navbar.html"
+        "/components/navbar.html"
     );
 
     await loadComponent(
         "media_link",
-        "./components/media_link.html"
+        "/components/media_link.html"
     );
 
     await loadComponent(
         "footer",
-        "./components/footer.html"
+        "/components/footer.html"
     );
 
     initCopyrightModal();

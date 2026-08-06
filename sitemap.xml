@@ -1,24 +1,390 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
-    <url>
-        <loc>https://visser6416.com/</loc>
-    </url>
-
-    <url>
-        <loc>https://visser6416.com/about.html</loc>
-    </url>
-
-    <url>
-        <loc>https://visser6416.com/works.html</loc>
-    </url>
-
-    <url>
-        <loc>https://visser6416.com/commission.html</loc>
-    </url>
-
-    <url>
-        <loc>https://visser6416.com/contact.html</loc>
-    </url>
-
+  <url>
+    <loc>https://www.visser6416.com/</loc>
+  </url>
+  <url>
+    <loc>https://www.visser6416.com/about.html</loc>
+  </url>
+  <url>
+    <loc>https://www.visser6416.com/works.html</loc>
+  </url>
+  <url>
+    <loc>https://www.visser6416.com/commission.html</loc>
+  </url>
+  <url>
+    <loc>https://www.visser6416.com/contact.html</loc>
+  </url>
+  <url>
+    <loc>https://www.visser6416.com/works/H8k7pEFy5iQ.html</loc>
+    <lastmod>2026/8/4 17:00</lastmod>
+  </url>
+  <url>
+    <loc>https://www.visser6416.com/works/EWpF05pd0Zw.html</loc>
+    <lastmod>2026/07/30 22:37</lastmod>
+  </url>
+  <url>
+    <loc>https://www.visser6416.com/works/tn15nFH3KXw.html</loc>
+    <lastmod>2026/07/30 17:14</lastmod>
+  </url>
+  <url>
+    <loc>https://www.visser6416.com/works/FRry1shqh3k.html</loc>
+    <lastmod>2026/07/27 15:53</lastmod>
+  </url>
+  <url>
+    <loc>https://www.visser6416.com/works/U84GfQrj2ok.html</loc>
+    <lastmod>2026/07/25 17:23</lastmod>
+  </url>
+  <url>
+    <loc>https://www.visser6416.com/works/VRG7L81xz7k.html</loc>
+    <lastmod>2026/07/21 17:00</lastmod>
+  </url>
+  <url>
+    <loc>https://www.visser6416.com/works/6QIWqZUNY_M.html</loc>
+    <lastmod>2026/06/17 17:00</lastmod>
+  </url>
+  <url>
+    <loc>https://www.visser6416.com/works/Wughj2dpPuI.html</loc>
+    <lastmod>2026/02/28 23:56</lastmod>
+  </url>
+  <url>
+    <loc>https://www.visser6416.com/works/DHXaQDHjReI.html</loc>
+    <lastmod>2025/12/26 20:09</lastmod>
+  </url>
+  <url>
+    <loc>https://www.visser6416.com/works/57ivYQ83tyk.html</loc>
+    <lastmod>2025/12/07 18:35</lastmod>
+  </url>
+  <url>
+    <loc>https://www.visser6416.com/works/rOxLFnoyOsw.html</loc>
+    <lastmod>2025/11/21 20:58</lastmod>
+  </url>
+  <url>
+    <loc>https://www.visser6416.com/works/featrKGoiTY.html</loc>
+    <lastmod>2025/11/17 21:54</lastmod>
+  </url>
+  <url>
+    <loc>https://www.visser6416.com/works/RGmUD7ipEMo.html</loc>
+    <lastmod>2025/11/16 19:20</lastmod>
+  </url>
+  <url>
+    <loc>https://www.visser6416.com/works/fPx-dJZYvjw.html</loc>
+    <lastmod>2025/11/11 19:00</lastmod>
+  </url>
+  <url>
+    <loc>https://www.visser6416.com/works/qMYCmTDOZXU.html</loc>
+    <lastmod>2025/10/31 19:00</lastmod>
+  </url>
+  <url>
+    <loc>https://www.visser6416.com/works/0VcKKVD8qIU.html</loc>
+    <lastmod>2025/10/15 19:00</lastmod>
+  </url>
+  <url>
+    <loc>https://www.visser6416.com/works/KhDLcDMs1go.html</loc>
+    <lastmod>2025/09/30 23:08</lastmod>
+  </url>
+  <url>
+    <loc>https://www.visser6416.com/works/r5fpleLq2zg.html</loc>
+    <lastmod>2025/09/23 17:19</lastmod>
+  </url>
+  <url>
+    <loc>https://www.visser6416.com/works/rz6QQYnH-6I.html</loc>
+    <lastmod>2025/09/07 18:30</lastmod>
+  </url>
+  <url>
+    <loc>https://www.visser6416.com/works/OjEYc19REeA.html</loc>
+    <lastmod>2025/08/27 20:00</lastmod>
+  </url>
+  <url>
+    <loc>https://www.visser6416.com/works/tYhU2XLFtzE.html</loc>
+    <lastmod>2025/08/21 22:26</lastmod>
+  </url>
+  <url>
+    <loc>https://www.visser6416.com/works/IWBXwjuSoks.html</loc>
+    <lastmod>2025/08/15 10:31</lastmod>
+  </url>
+  <url>
+    <loc>https://www.visser6416.com/works/I67ooqE2T78.html</loc>
+    <lastmod>2025/08/01 17:23</lastmod>
+  </url>
+  <url>
+    <loc>https://www.visser6416.com/works/m4bQFVWHUmc.html</loc>
+    <lastmod>2025/07/25 00:00</lastmod>
+  </url>
+  <url>
+    <loc>https://www.visser6416.com/works/gRfMs3a2_lQ.html</loc>
+    <lastmod>2025/07/16 22:00</lastmod>
+  </url>
+  <url>
+    <loc>https://www.visser6416.com/works/g6_eVVtoZeE.html</loc>
+    <lastmod>2025/07/01 14:41</lastmod>
+  </url>
+  <url>
+    <loc>https://www.visser6416.com/works/yLjlOmCmwaE.html</loc>
+    <lastmod>2025/06/15 17:20</lastmod>
+  </url>
+  <url>
+    <loc>https://www.visser6416.com/works/NkpC4Aa5iJw.html</loc>
+    <lastmod>2025/05/29 14:08</lastmod>
+  </url>
+  <url>
+    <loc>https://www.visser6416.com/works/ME8fu04IMV4.html</loc>
+    <lastmod>2025/05/23 03:32</lastmod>
+  </url>
+  <url>
+    <loc>https://www.visser6416.com/works/TKoU8ntwJeY.html</loc>
+    <lastmod>2025/05/18 16:49</lastmod>
+  </url>
+  <url>
+    <loc>https://www.visser6416.com/works/QZefKTA5Egs.html</loc>
+    <lastmod>2025/05/12 21:00</lastmod>
+  </url>
+  <url>
+    <loc>https://www.visser6416.com/works/icK9WYSaz-A.html</loc>
+    <lastmod>2025/05/04 13:59</lastmod>
+  </url>
+  <url>
+    <loc>https://www.visser6416.com/works/2hmCWookmTM.html</loc>
+    <lastmod>2025/05/02 10:12</lastmod>
+  </url>
+  <url>
+    <loc>https://www.visser6416.com/works/nSPKWG4z-gk.html</loc>
+    <lastmod>2025/04/04 08:00</lastmod>
+  </url>
+  <url>
+    <loc>https://www.visser6416.com/works/n_80AsEY3-k.html</loc>
+    <lastmod>2025/03/30 18:36</lastmod>
+  </url>
+  <url>
+    <loc>https://www.visser6416.com/works/3rHtVF4KbNM.html</loc>
+    <lastmod>2025/02/28 23:00</lastmod>
+  </url>
+  <url>
+    <loc>https://www.visser6416.com/works/1h-kAV1M7BY.html</loc>
+    <lastmod>2025/02/14 06:19</lastmod>
+  </url>
+  <url>
+    <loc>https://www.visser6416.com/works/Iq1XrGd9PFw.html</loc>
+    <lastmod>2025/01/28 14:03</lastmod>
+  </url>
+  <url>
+    <loc>https://www.visser6416.com/works/YmK_kDOvRQo.html</loc>
+    <lastmod>2025/01/20 06:52</lastmod>
+  </url>
+  <url>
+    <loc>https://www.visser6416.com/works/odHLyCwJwQ4.html</loc>
+    <lastmod>2025/01/10 08:00</lastmod>
+  </url>
+  <url>
+    <loc>https://www.visser6416.com/works/vBo6v2MGD4w.html</loc>
+    <lastmod>2024/12/27 16:46</lastmod>
+  </url>
+  <url>
+    <loc>https://www.visser6416.com/works/TOfWoM37FjU.html</loc>
+    <lastmod>2024/12/15 20:25</lastmod>
+  </url>
+  <url>
+    <loc>https://www.visser6416.com/works/iDli2hRMb5s.html</loc>
+    <lastmod>2024/12/09 20:01</lastmod>
+  </url>
+  <url>
+    <loc>https://www.visser6416.com/works/hf82MO-WJb4.html</loc>
+    <lastmod>2024/12/01 20:00</lastmod>
+  </url>
+  <url>
+    <loc>https://www.visser6416.com/works/OKyYOG5qP-U.html</loc>
+    <lastmod>2024/09/25 15:12</lastmod>
+  </url>
+  <url>
+    <loc>https://www.visser6416.com/works/KQ4fW7RTfUU.html</loc>
+    <lastmod>2024/09/16 12:09</lastmod>
+  </url>
+  <url>
+    <loc>https://www.visser6416.com/works/NGR_QLeBMJM.html</loc>
+    <lastmod>2024/09/13 04:12</lastmod>
+  </url>
+  <url>
+    <loc>https://www.visser6416.com/works/oTZafOLfZUA.html</loc>
+    <lastmod>2024/09/06 13:38</lastmod>
+  </url>
+  <url>
+    <loc>https://www.visser6416.com/works/8oFPCX0PsoI.html</loc>
+    <lastmod>2024/07/25 00:00</lastmod>
+  </url>
+  <url>
+    <loc>https://www.visser6416.com/works/qQ_aneuITsg.html</loc>
+    <lastmod>2024/06/04 00:00</lastmod>
+  </url>
+  <url>
+    <loc>https://www.visser6416.com/works/9y5oNFkhaAU.html</loc>
+    <lastmod>2024/05/01 00:44</lastmod>
+  </url>
+  <url>
+    <loc>https://www.visser6416.com/works/TmL_2vRFTXc.html</loc>
+    <lastmod>2024/04/16 01:50</lastmod>
+  </url>
+  <url>
+    <loc>https://www.visser6416.com/works/D37o8WHHXTA.html</loc>
+    <lastmod>2024/04/08 16:00</lastmod>
+  </url>
+  <url>
+    <loc>https://www.visser6416.com/works/4hrBYVEnz40.html</loc>
+    <lastmod>2024/04/03 20:00</lastmod>
+  </url>
+  <url>
+    <loc>https://www.visser6416.com/works/KUq6w1nLHdE.html</loc>
+    <lastmod>2024/03/29 20:00</lastmod>
+  </url>
+  <url>
+    <loc>https://www.visser6416.com/works/B5Yk68zW-qA.html</loc>
+    <lastmod>2024/02/23 16:21</lastmod>
+  </url>
+  <url>
+    <loc>https://www.visser6416.com/works/gg3QyE332o4.html</loc>
+    <lastmod>2024/02/06 01:31</lastmod>
+  </url>
+  <url>
+    <loc>https://www.visser6416.com/works/xbrluL_3rH0.html</loc>
+    <lastmod>2024/01/29 02:35</lastmod>
+  </url>
+  <url>
+    <loc>https://www.visser6416.com/works/ZfjI_U_GDmY.html</loc>
+    <lastmod>2023/10/28 01:13</lastmod>
+  </url>
+  <url>
+    <loc>https://www.visser6416.com/works/1iffljaIs1M.html</loc>
+    <lastmod>2023/10/11 22:02</lastmod>
+  </url>
+  <url>
+    <loc>https://www.visser6416.com/works/pCnhffB1uUM.html</loc>
+    <lastmod>2023/08/08 17:33</lastmod>
+  </url>
+  <url>
+    <loc>https://www.visser6416.com/works/EKhqM7ucAdQ.html</loc>
+    <lastmod>2023/08/05 02:32</lastmod>
+  </url>
+  <url>
+    <loc>https://www.visser6416.com/works/WIOevdMS9Xc.html</loc>
+    <lastmod>2023/07/31 20:00</lastmod>
+  </url>
+  <url>
+    <loc>https://www.visser6416.com/works/K7OVjNmKYoM.html</loc>
+    <lastmod>2023/06/03 21:00</lastmod>
+  </url>
+  <url>
+    <loc>https://www.visser6416.com/works/vpIgWd4Abm8.html</loc>
+    <lastmod>2023/03/05 20:00</lastmod>
+  </url>
+  <url>
+    <loc>https://www.visser6416.com/works/lGCfYsW9O58.html</loc>
+    <lastmod>2023/02/26 20:00</lastmod>
+  </url>
+  <url>
+    <loc>https://www.visser6416.com/works/_1MNf__-OTY.html</loc>
+    <lastmod>2022/12/20 12:07</lastmod>
+  </url>
+  <url>
+    <loc>https://www.visser6416.com/works/oSi3dzzsPYY.html</loc>
+    <lastmod>2022/11/22 22:42</lastmod>
+  </url>
+  <url>
+    <loc>https://www.visser6416.com/works/CWQpIjpWg4c.html</loc>
+    <lastmod>2022/11/20 23:18</lastmod>
+  </url>
+  <url>
+    <loc>https://www.visser6416.com/works/0NydSIr8A3w.html</loc>
+    <lastmod>2022/09/14 22:37</lastmod>
+  </url>
+  <url>
+    <loc>https://www.visser6416.com/works/jK8J8M9ciE4.html</loc>
+    <lastmod>2022/07/05 23:37</lastmod>
+  </url>
+  <url>
+    <loc>https://www.visser6416.com/works/_xst-H9yJYA.html</loc>
+    <lastmod>2022/06/29 16:47</lastmod>
+  </url>
+  <url>
+    <loc>https://www.visser6416.com/works/ZntWlyPrFSY.html</loc>
+    <lastmod>2022/06/22 11:48</lastmod>
+  </url>
+  <url>
+    <loc>https://www.visser6416.com/works/kIqHlPV6M7o.html</loc>
+    <lastmod>2022/03/20 20:43</lastmod>
+  </url>
+  <url>
+    <loc>https://www.visser6416.com/works/ZoQeej2AMco.html</loc>
+    <lastmod>2022/02/21 06:20</lastmod>
+  </url>
+  <url>
+    <loc>https://www.visser6416.com/works/487TPc2cT38.html</loc>
+    <lastmod>2021/12/13 22:19</lastmod>
+  </url>
+  <url>
+    <loc>https://www.visser6416.com/works/i2TbQuU0Tdk.html</loc>
+    <lastmod>2021/12/12 18:06</lastmod>
+  </url>
+  <url>
+    <loc>https://www.visser6416.com/works/_oGC16HWB_g.html</loc>
+    <lastmod>2021/11/21 20:25</lastmod>
+  </url>
+  <url>
+    <loc>https://www.visser6416.com/works/cI1z7_hcnzI.html</loc>
+    <lastmod>2021/10/17 19:51</lastmod>
+  </url>
+  <url>
+    <loc>https://www.visser6416.com/works/S9TbZzTYguI.html</loc>
+    <lastmod>2021/08/22 15:14</lastmod>
+  </url>
+  <url>
+    <loc>https://www.visser6416.com/works/NR-jVQ6zzN8.html</loc>
+    <lastmod>2021/08/15 17:59</lastmod>
+  </url>
+  <url>
+    <loc>https://www.visser6416.com/works/GVXCENqlltE.html</loc>
+    <lastmod>2021/07/26 21:29</lastmod>
+  </url>
+  <url>
+    <loc>https://www.visser6416.com/works/1eap9uP6zl8.html</loc>
+    <lastmod>2021/06/21 09:48</lastmod>
+  </url>
+  <url>
+    <loc>https://www.visser6416.com/works/E48zSaN5wls.html</loc>
+    <lastmod>2021/06/14 19:12</lastmod>
+  </url>
+  <url>
+    <loc>https://www.visser6416.com/works/Jzxkwg8fw-g.html</loc>
+    <lastmod>2021/05/21 01:55</lastmod>
+  </url>
+  <url>
+    <loc>https://www.visser6416.com/works/T7Z2w9PPyuc.html</loc>
+    <lastmod>2021/03/22 12:09</lastmod>
+  </url>
+  <url>
+    <loc>https://www.visser6416.com/works/IPOUKinTThU.html</loc>
+    <lastmod>2021/03/05 11:20</lastmod>
+  </url>
+  <url>
+    <loc>https://www.visser6416.com/works/Cjuhs1XPdZU.html</loc>
+    <lastmod>2020/10/11 19:24</lastmod>
+  </url>
+  <url>
+    <loc>https://www.visser6416.com/works/WDSsWTEJmzo.html</loc>
+    <lastmod>2020/05/05 08:20</lastmod>
+  </url>
+  <url>
+    <loc>https://www.visser6416.com/works/iM60fIuI6Ig.html</loc>
+    <lastmod>2020/01/16 14:04</lastmod>
+  </url>
+  <url>
+    <loc>https://www.visser6416.com/works/PXhKcPSDHDc.html</loc>
+    <lastmod>2019/08/12 15:14</lastmod>
+  </url>
+  <url>
+    <loc>https://www.visser6416.com/works/7BcTHfeX0BI.html</loc>
+    <lastmod>2019/02/12 23:26</lastmod>
+  </url>
+  <url>
+    <loc>https://www.visser6416.com/works/MllTn3_r794.html</loc>
+    <lastmod>2017/03/21 20:08</lastmod>
+  </url>
 </urlset>

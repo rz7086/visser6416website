@@ -36,7 +36,7 @@
 
     --shadow-text: 0 2px 14px rgba(0, 0, 0, 0.85);
     --shadow-card:
-        0 24px 64px rgba(0, 0, 0, 0.35),
+        0 24px 64px rgba(0, 0, 0, 0.55),
         0 0 48px rgba(109, 70, 135, 0.12);
 
     --transition-fast: 0.25s ease;
@@ -147,7 +147,7 @@ hr {
    3. Header / Navbar
    ========================= */
 
-header {
+#navbar > .navbar {
     position: fixed;
     z-index: 1000;
     top: 0;
@@ -159,9 +159,9 @@ header {
     background: rgba(31, 31, 31, 0.75);
     backdrop-filter: blur(12px);
 
-    box-shadow: var(--shadow-card);
-    box-shadow: var(--shadow-card);
-    box-shadow: var(--shadow-card);
+    box-shadow:
+        0 1px 0 rgba(255,255,255,.05),
+        0 10px 30px rgba(0,0,0,.35);
 }
 
 .navbar {
@@ -299,7 +299,7 @@ header {
    ========================= */
 
 @media (max-width: 600px) {
-    header {
+    #navbar header {
         padding:
             var(--space-xs)
             var(--space-md);
