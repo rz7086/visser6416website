@@ -87,7 +87,7 @@
         <section class="works_tools">
             <div class="container works_tools_inner">
                 <div class="works_filters" id="works_filters" aria-label="作品分類篩選">
-                    <button class="filter_button is_active" type="button" data-filter="all">
+                    <button class="filter_button is_active" type="button" data-filter="全部">
                         全部
                     </button>
                     
@@ -114,6 +114,148 @@
 
         <section class="works_grid container" id="works_grid" aria-live="polite"></section>
     </main>
+
+    <!-- =====================================
+    作品播放器彈窗
+    ===================================== -->
+
+    <div
+        class="work_modal"
+        id="workModal"
+        aria-hidden="true"
+    >
+        <!-- 背景遮罩 -->
+        <div
+            class="work_modal_backdrop"
+            data-close-work-modal
+        ></div>
+
+        <!-- 彈窗內容 -->
+        <article
+            class="work_modal_content"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="workModalTitle"
+        >
+            <!-- 關閉按鈕 -->
+            <button
+                class="work_modal_close"
+                id="workModalClose"
+                type="button"
+                aria-label="關閉作品播放器"
+            >
+                <i
+                    class="fa-solid fa-xmark"
+                    aria-hidden="true"
+                ></i>
+            </button>
+
+            <div class="work_modal_layout">
+
+                <!-- 左側：播放器與作品資訊 -->
+                <section class="work_modal_main">
+
+                    <!-- YouTube 播放器 -->
+                    <div class="work_modal_player">
+                        <iframe
+                            id="workModalIframe"
+                            src=""
+                            title="YouTube 影片播放器"
+                            allow="
+                                accelerometer;
+                                autoplay;
+                                clipboard-write;
+                                encrypted-media;
+                                gyroscope;
+                                picture-in-picture;
+                                web-share
+                            "
+                            allowfullscreen
+                        ></iframe>
+                    </div>
+
+                    <!-- 作品資訊 -->
+                    <div class="work_modal_info">
+                        <h2 id="workModalTitle">
+                            作品名稱
+                        </h2>
+
+                        <div
+                            class="work_modal_tags"
+                            id="workModalTags"
+                        ></div>
+
+                        <p
+                            class="work_modal_description"
+                            id="workModalDescription"
+                        ></p>
+                    </div>
+
+                    <!-- 上一部／下一部 -->
+                    <nav
+                        class="work_modal_navigation"
+                        aria-label="作品切換"
+                    >
+                        <button
+                            class="work_modal_previous"
+                            id="previousWorkButton"
+                            type="button"
+                        >
+                            <i
+                                class="fa-solid fa-arrow-left"
+                                aria-hidden="true"
+                            ></i>
+
+                            <span>
+                                上一部
+                            </span>
+                        </button>
+
+                        <span
+                            class="work_modal_position"
+                            id="workModalPosition"
+                            aria-live="polite"
+                        >
+                            1 / 1
+                        </span>
+
+                        <button
+                            class="work_modal_next"
+                            id="nextWorkButton"
+                            type="button"
+                        >
+                            <span>
+                                下一部
+                            </span>
+
+                            <i
+                                class="fa-solid fa-arrow-right"
+                                aria-hidden="true"
+                            ></i>
+                        </button>
+                    </nav>
+                </section>
+
+                <!-- 右側：歌詞 -->
+                <aside
+                    class="work_modal_lyrics"
+                    aria-labelledby="workModalLyricsTitle"
+                >
+                    <h3 id="workModalLyricsTitle">
+                        歌詞
+                    </h3>
+
+                    <div
+                        class="work_modal_lyrics_content"
+                        id="workModalLyrics"
+                    >
+                        （無歌詞）
+                    </div>
+                </aside>
+
+            </div>
+        </article>
+    </div>
 
     <footer id="footer"></footer>
     <div
@@ -171,6 +313,9 @@
     </button>
     <script src="./csstuber/csstuber_component.js" defer></script>
     <script src="js/script.js"></script>
-    <script src="js/works.js"></script>
+    <script
+        type="module"
+        src="./js/work.js"
+    ></script>
 </body>
 </html>

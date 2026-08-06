@@ -514,7 +514,7 @@ html.js_ready .reveal.is_visible {
     border: 1px solid var(--color-border) !important;
     border-radius: var(--radius-pill) !important;
 
-    background: #a970ff !important;
+    background: #9e82b3 !important;
     color: #ffffff !important;
 
     font-family: inherit !important;
@@ -537,7 +537,7 @@ html.js_ready .reveal.is_visible {
 #HCB_comment_box .btn:hover {
     border-color: #ffffff !important;
     background: #ffffff !important;
-    color: #a970ff !important;
+    color: #9e82b3 !important;
 }
 
 /* 留言區文字 */
