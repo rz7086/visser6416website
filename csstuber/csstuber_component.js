@@ -96,7 +96,7 @@ class CSSTuber extends HTMLElement {
             eyesMoveY: 6,
 
             /*
-             * 眼鏡 
+             * 眼鏡  
              */
             glassesMoveX: 4.5,
             glassesMoveY: 1.5,
