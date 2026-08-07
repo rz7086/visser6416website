@@ -41,6 +41,8 @@ class CSSTuber extends HTMLElement {
         this.clickAnimationTimer = null;
         this.eyeResetTimer = null;
         this.animationFrame = null;
+        this.blinkTimer = null;
+        this.blinkResetTimer = null;
 
         /*
          * 所有可調參數集中在這裡。
@@ -60,7 +62,7 @@ class CSSTuber extends HTMLElement {
              * 臉部中心在角色畫布中的位置
              */
             faceCenterX: 0.5,
-            faceCenterY: 0.32,
+            faceCenterY: 0.6,
 
             /*
              * 滑鼠距離多遠時達到最大動作幅度
@@ -81,13 +83,17 @@ class CSSTuber extends HTMLElement {
             headMoveX: 4,
             headMoveY: 1,
             headRotate: 1.2,
+            headRotateY: 8,
+            headRotateX: 8,
 
             /*
              * 頭髮
              */
-            hairMoveX: 3.5,
-            hairMoveY: 0.5,
+            hairMoveX: 4.2,
+            hairMoveY: 1.2,
             hairRotate: 1.2,
+            hairRotateY: 9,
+            hairRotateX: 9,
 
             /*
              * 眼睛
@@ -108,6 +114,16 @@ class CSSTuber extends HTMLElement {
             clickDuration: 480,
             clickEyesDuration: 350,
 
+
+            /*
+             * 眨眼動畫
+             */
+            
+            blinkDuration: 200,
+            blinkMinInterval: 5000,
+            blinkMaxInterval: 8000,
+
+
             /*
              * hitbox位置
              */
@@ -115,7 +131,13 @@ class CSSTuber extends HTMLElement {
             headHitboxLeft:40,
             headHitboxBottom:55,
             headHitboxWidth:20,
-            headHitboxHeight:20
+            headHitboxHeight:20,
+
+            /*
+             * 追蹤曲線強度
+             */
+
+            trackingCurve: 1.3,
 
         };
 
@@ -148,7 +170,13 @@ class CSSTuber extends HTMLElement {
             clickEyes: new URL(
                 "./images/eyes-clicked.png",
                 CSSTUBER_BASE_URL
+            ).href,
+
+            closedEyes: new URL(
+                "./images/eyes-closed.png",
+                CSSTUBER_BASE_URL
             ).href
+
         };
 
         /*
@@ -165,6 +193,15 @@ class CSSTuber extends HTMLElement {
 
         this.playClickAnimation =
             this.playClickAnimation.bind(this);
+
+        this.playBlink =
+            this.playBlink.bind(this);
+
+        this.scheduleNextBlink =
+            this.scheduleNextBlink.bind(this);
+
+        this.applyTrackingCurve =
+            this.applyTrackingCurve.bind(this);
     }
 
 
@@ -183,8 +220,10 @@ class CSSTuber extends HTMLElement {
         this.applyAttributes();
         this.preloadImages();
         this.connectEvents();
-
+        
         this.animate();
+        this.scheduleNextBlink();
+        console.log("CSS Tuber 已啟動。");
     }
 
 
@@ -703,12 +742,29 @@ class CSSTuber extends HTMLElement {
         clickEyesPreload.src =
             this.paths.clickEyes;
 
+
+        const closedEyesPreload =
+            new Image();
+
+        closedEyesPreload.src =
+            this.paths.closedEyes;
+
         clickEyesPreload.addEventListener(
             "error",
             () => {
                 console.error(
                     "CSS Tuber：點擊眼睛圖片載入失敗：",
                     this.paths.clickEyes
+                );
+            }
+        );
+
+        closedEyesPreload.addEventListener(
+            "error",
+            () => {
+                console.error(
+                    "CSS Tuber：閉眼圖片載入失敗：",
+                    this.paths.closedEyes
                 );
             }
         );
@@ -861,10 +917,99 @@ class CSSTuber extends HTMLElement {
             }, this.params.clickDuration);
     }
 
+    playBlink() {
+        window.clearTimeout(
+            this.blinkResetTimer
+        );
+
+        this.eyes.src =
+            this.paths.closedEyes;
+
+        this.blinkResetTimer =
+            window.setTimeout(
+                () => {
+                    this.eyes.src =
+                        this.paths.eyes;
+
+                    this.scheduleNextBlink();
+                },
+                this.params.blinkDuration
+            );
+    }
+
+    scheduleNextBlink() {
+        console.log("scheduleNextBlink");
+
+        window.clearTimeout(
+            this.blinkTimer
+        );
+
+        const min =
+            this.params.blinkMinInterval;
+
+        const max =
+            this.params.blinkMaxInterval;
+
+        const delay =
+            Math.random() *
+            (max - min) +
+            min;
+
+        this.blinkTimer =
+            window.setTimeout(
+                () => {
+                    this.playBlink();
+                },
+                delay
+            );
+    }
+            
+    applyTrackingCurve(
+        value,
+        strength = this.params.trackingCurve
+    ) {
+        console.log("applyTrackingCurve", value, strength);
+        return (
+            Math.tanh(
+                value * strength
+            ) /
+            Math.tanh(
+                strength
+            )
+        );
+    }
+
+    limitToCircle(
+        x,
+        y,
+        radius = 1
+    ) {
+
+        const length =
+            Math.hypot(x, y);
+
+        if (length <= radius) {
+            return {
+                x,
+                y
+            };
+        }
+
+        const scale =
+            radius / length;
+
+        return {
+            x: x * scale,
+            y: y * scale
+        };
+
+    }
+
 
     animate() {
         const {
-            smoothing
+            smoothing,
+            trackingCurve
         } = this.params;
 
         this.state.currentX +=
@@ -879,12 +1024,25 @@ class CSSTuber extends HTMLElement {
                 this.state.currentY
             ) * smoothing;
 
-        const x =
-            this.state.currentX;
 
-        const y =
-            this.state.currentY;
+        let x =
+            this.applyTrackingCurve(
+                this.state.currentX
+            );
 
+        let y =
+            this.applyTrackingCurve(
+                this.state.currentY
+            );
+
+        ({
+            x,
+            y
+        } = this.limitToCircle(
+            x,
+            y,
+            0.92
+        ));
 
         /*
          * 整體角色追蹤
@@ -911,6 +1069,13 @@ class CSSTuber extends HTMLElement {
             rotate(
                 ${x * this.params.headRotate}deg
             )
+            rotateY(
+                ${x * this.params.headRotateY}deg
+            )
+
+            rotateX(
+                ${-y * this.params.headRotateX}deg
+            )
         `;
 
         this.head.style.transform =
@@ -935,6 +1100,13 @@ class CSSTuber extends HTMLElement {
             rotate(
                 ${x * this.params.hairRotate}deg
             )
+            rotateY(
+                ${x * this.params.hairRotateY}deg
+            )
+
+            rotateX(
+                ${-y * this.params.hairRotateX}deg
+            )
         `;
 
 
@@ -947,7 +1119,6 @@ class CSSTuber extends HTMLElement {
                 ${y * this.params.eyesMoveY}px
             )
         `;
-
 
         /*
          * 眼鏡
